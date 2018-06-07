@@ -1,0 +1,240 @@
+; Auto-generated. Do not edit!
+
+
+(cl:in-package ros_topology_msgs-msg)
+
+
+;//! \htmlinclude Node.msg.html
+
+(cl:defclass <Node> (roslisp-msg-protocol:ros-message)
+  ((name
+    :reader name
+    :initarg :name
+    :type cl:string
+    :initform "")
+   (uri
+    :reader uri
+    :initarg :uri
+    :type cl:string
+    :initform "")
+   (publishes
+    :reader publishes
+    :initarg :publishes
+    :type (cl:vector cl:string)
+   :initform (cl:make-array 0 :element-type 'cl:string :initial-element ""))
+   (subscribes
+    :reader subscribes
+    :initarg :subscribes
+    :type (cl:vector cl:string)
+   :initform (cl:make-array 0 :element-type 'cl:string :initial-element ""))
+   (connections
+    :reader connections
+    :initarg :connections
+    :type (cl:vector ros_topology_msgs-msg:Connection)
+   :initform (cl:make-array 0 :element-type 'ros_topology_msgs-msg:Connection :initial-element (cl:make-instance 'ros_topology_msgs-msg:Connection)))
+   (provides
+    :reader provides
+    :initarg :provides
+    :type (cl:vector ros_topology_msgs-msg:Service)
+   :initform (cl:make-array 0 :element-type 'ros_topology_msgs-msg:Service :initial-element (cl:make-instance 'ros_topology_msgs-msg:Service))))
+)
+
+(cl:defclass Node (<Node>)
+  ())
+
+(cl:defmethod cl:initialize-instance :after ((m <Node>) cl:&rest args)
+  (cl:declare (cl:ignorable args))
+  (cl:unless (cl:typep m 'Node)
+    (roslisp-msg-protocol:msg-deprecation-warning "using old message class name ros_topology_msgs-msg:<Node> is deprecated: use ros_topology_msgs-msg:Node instead.")))
+
+(cl:ensure-generic-function 'name-val :lambda-list '(m))
+(cl:defmethod name-val ((m <Node>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader ros_topology_msgs-msg:name-val is deprecated.  Use ros_topology_msgs-msg:name instead.")
+  (name m))
+
+(cl:ensure-generic-function 'uri-val :lambda-list '(m))
+(cl:defmethod uri-val ((m <Node>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader ros_topology_msgs-msg:uri-val is deprecated.  Use ros_topology_msgs-msg:uri instead.")
+  (uri m))
+
+(cl:ensure-generic-function 'publishes-val :lambda-list '(m))
+(cl:defmethod publishes-val ((m <Node>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader ros_topology_msgs-msg:publishes-val is deprecated.  Use ros_topology_msgs-msg:publishes instead.")
+  (publishes m))
+
+(cl:ensure-generic-function 'subscribes-val :lambda-list '(m))
+(cl:defmethod subscribes-val ((m <Node>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader ros_topology_msgs-msg:subscribes-val is deprecated.  Use ros_topology_msgs-msg:subscribes instead.")
+  (subscribes m))
+
+(cl:ensure-generic-function 'connections-val :lambda-list '(m))
+(cl:defmethod connections-val ((m <Node>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader ros_topology_msgs-msg:connections-val is deprecated.  Use ros_topology_msgs-msg:connections instead.")
+  (connections m))
+
+(cl:ensure-generic-function 'provides-val :lambda-list '(m))
+(cl:defmethod provides-val ((m <Node>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader ros_topology_msgs-msg:provides-val is deprecated.  Use ros_topology_msgs-msg:provides instead.")
+  (provides m))
+(cl:defmethod roslisp-msg-protocol:serialize ((msg <Node>) ostream)
+  "Serializes a message object of type '<Node>"
+  (cl:let ((__ros_str_len (cl:length (cl:slot-value msg 'name))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_str_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (c) (cl:write-byte (cl:char-code c) ostream)) (cl:slot-value msg 'name))
+  (cl:let ((__ros_str_len (cl:length (cl:slot-value msg 'uri))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_str_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (c) (cl:write-byte (cl:char-code c) ostream)) (cl:slot-value msg 'uri))
+  (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'publishes))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_arr_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (ele) (cl:let ((__ros_str_len (cl:length ele)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_str_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (c) (cl:write-byte (cl:char-code c) ostream)) ele))
+   (cl:slot-value msg 'publishes))
+  (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'subscribes))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_arr_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (ele) (cl:let ((__ros_str_len (cl:length ele)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_str_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (c) (cl:write-byte (cl:char-code c) ostream)) ele))
+   (cl:slot-value msg 'subscribes))
+  (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'connections))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_arr_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (ele) (roslisp-msg-protocol:serialize ele ostream))
+   (cl:slot-value msg 'connections))
+  (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'provides))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_arr_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (ele) (roslisp-msg-protocol:serialize ele ostream))
+   (cl:slot-value msg 'provides))
+)
+(cl:defmethod roslisp-msg-protocol:deserialize ((msg <Node>) istream)
+  "Deserializes a message object of type '<Node>"
+    (cl:let ((__ros_str_len 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'name) (cl:make-string __ros_str_len))
+      (cl:dotimes (__ros_str_idx __ros_str_len msg)
+        (cl:setf (cl:char (cl:slot-value msg 'name) __ros_str_idx) (cl:code-char (cl:read-byte istream)))))
+    (cl:let ((__ros_str_len 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'uri) (cl:make-string __ros_str_len))
+      (cl:dotimes (__ros_str_idx __ros_str_len msg)
+        (cl:setf (cl:char (cl:slot-value msg 'uri) __ros_str_idx) (cl:code-char (cl:read-byte istream)))))
+  (cl:let ((__ros_arr_len 0))
+    (cl:setf (cl:ldb (cl:byte 8 0) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) __ros_arr_len) (cl:read-byte istream))
+  (cl:setf (cl:slot-value msg 'publishes) (cl:make-array __ros_arr_len))
+  (cl:let ((vals (cl:slot-value msg 'publishes)))
+    (cl:dotimes (i __ros_arr_len)
+    (cl:let ((__ros_str_len 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:aref vals i) (cl:make-string __ros_str_len))
+      (cl:dotimes (__ros_str_idx __ros_str_len msg)
+        (cl:setf (cl:char (cl:aref vals i) __ros_str_idx) (cl:code-char (cl:read-byte istream))))))))
+  (cl:let ((__ros_arr_len 0))
+    (cl:setf (cl:ldb (cl:byte 8 0) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) __ros_arr_len) (cl:read-byte istream))
+  (cl:setf (cl:slot-value msg 'subscribes) (cl:make-array __ros_arr_len))
+  (cl:let ((vals (cl:slot-value msg 'subscribes)))
+    (cl:dotimes (i __ros_arr_len)
+    (cl:let ((__ros_str_len 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:aref vals i) (cl:make-string __ros_str_len))
+      (cl:dotimes (__ros_str_idx __ros_str_len msg)
+        (cl:setf (cl:char (cl:aref vals i) __ros_str_idx) (cl:code-char (cl:read-byte istream))))))))
+  (cl:let ((__ros_arr_len 0))
+    (cl:setf (cl:ldb (cl:byte 8 0) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) __ros_arr_len) (cl:read-byte istream))
+  (cl:setf (cl:slot-value msg 'connections) (cl:make-array __ros_arr_len))
+  (cl:let ((vals (cl:slot-value msg 'connections)))
+    (cl:dotimes (i __ros_arr_len)
+    (cl:setf (cl:aref vals i) (cl:make-instance 'ros_topology_msgs-msg:Connection))
+  (roslisp-msg-protocol:deserialize (cl:aref vals i) istream))))
+  (cl:let ((__ros_arr_len 0))
+    (cl:setf (cl:ldb (cl:byte 8 0) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) __ros_arr_len) (cl:read-byte istream))
+  (cl:setf (cl:slot-value msg 'provides) (cl:make-array __ros_arr_len))
+  (cl:let ((vals (cl:slot-value msg 'provides)))
+    (cl:dotimes (i __ros_arr_len)
+    (cl:setf (cl:aref vals i) (cl:make-instance 'ros_topology_msgs-msg:Service))
+  (roslisp-msg-protocol:deserialize (cl:aref vals i) istream))))
+  msg
+)
+(cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<Node>)))
+  "Returns string type for a message object of type '<Node>"
+  "ros_topology_msgs/Node")
+(cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql 'Node)))
+  "Returns string type for a message object of type 'Node"
+  "ros_topology_msgs/Node")
+(cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<Node>)))
+  "Returns md5sum for a message object of type '<Node>"
+  "e793d9f25902b39f1451f272b3499991")
+(cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'Node)))
+  "Returns md5sum for a message object of type 'Node"
+  "e793d9f25902b39f1451f272b3499991")
+(cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<Node>)))
+  "Returns full string definition for message of type '<Node>"
+  (cl:format cl:nil "string name~%string uri~%# Topics this node has registered with master as publishing and subscribing~%string[] publishes~%string[] subscribes~%~%# Topic connections established with peers~%Connection[] connections~%~%# Services this node provides~%Service[] provides~%~%================================================================================~%MSG: ros_topology_msgs/Connection~%# directions~%uint8 IN=1~%uint8 OUT=2~%uint8 BOTH=3~%~%#destination node name~%string destination~%string topic~%uint8 direction~%string transport~%~%================================================================================~%MSG: ros_topology_msgs/Service~%string name~%string uri~%~%~%"))
+(cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'Node)))
+  "Returns full string definition for message of type 'Node"
+  (cl:format cl:nil "string name~%string uri~%# Topics this node has registered with master as publishing and subscribing~%string[] publishes~%string[] subscribes~%~%# Topic connections established with peers~%Connection[] connections~%~%# Services this node provides~%Service[] provides~%~%================================================================================~%MSG: ros_topology_msgs/Connection~%# directions~%uint8 IN=1~%uint8 OUT=2~%uint8 BOTH=3~%~%#destination node name~%string destination~%string topic~%uint8 direction~%string transport~%~%================================================================================~%MSG: ros_topology_msgs/Service~%string name~%string uri~%~%~%"))
+(cl:defmethod roslisp-msg-protocol:serialization-length ((msg <Node>))
+  (cl:+ 0
+     4 (cl:length (cl:slot-value msg 'name))
+     4 (cl:length (cl:slot-value msg 'uri))
+     4 (cl:reduce #'cl:+ (cl:slot-value msg 'publishes) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 4 (cl:length ele))))
+     4 (cl:reduce #'cl:+ (cl:slot-value msg 'subscribes) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 4 (cl:length ele))))
+     4 (cl:reduce #'cl:+ (cl:slot-value msg 'connections) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ (roslisp-msg-protocol:serialization-length ele))))
+     4 (cl:reduce #'cl:+ (cl:slot-value msg 'provides) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ (roslisp-msg-protocol:serialization-length ele))))
+))
+(cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <Node>))
+  "Converts a ROS message object to a list"
+  (cl:list 'Node
+    (cl:cons ':name (name msg))
+    (cl:cons ':uri (uri msg))
+    (cl:cons ':publishes (publishes msg))
+    (cl:cons ':subscribes (subscribes msg))
+    (cl:cons ':connections (connections msg))
+    (cl:cons ':provides (provides msg))
+))

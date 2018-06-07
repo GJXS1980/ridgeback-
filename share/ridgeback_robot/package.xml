@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package>
+  <name>ridgeback_robot</name>
+  <version>0.1.7</version>
+  <description>Metapackage of software to install on Ridgeback.</description>
+
+  <maintainer email="mpurvis@clearpathrobotics.com">Mike Purvis</maintainer>
+  <author email="mpurvis@clearpathrobotics.com">Mike Purvis</author>
+
+  <license>BSD</license>
+
+  <url type="website">http://wiki.ros.org/Robots/Ridgeback</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>ridgeback_bringup</run_depend>
+  <run_depend>ridgeback_firmware</run_depend>
+
+  <export>
+    <metapackage />
+  </export>
+</package>
